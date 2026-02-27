@@ -29,23 +29,24 @@
     const button = document.querySelector('#myButton');
     const body = document.body;
 
-    // O localStorage é uma funcionalidade do navegador que permite armazenar dados no formato chave-valor e mantê-los disponíveis entre sessões, mesmo após recarregar ou fechar o navegador. No exemplo, ele salva a preferência de tema em 'mode', registrando o valor como 'dark' ou 'light' quando o usuário alterna entre os modos. Ao carregar a página, o código acessa o valor salvo com localStorage.getItem('mode') e aplica o tema correspondente, garantindo uma experiência consistente e personalizada ao usuário.
 
-    // Verifica se há uma preferência de modo salva no localStorage
+    const saveMode = localStorage.getItem('mode')
+      if(saveMode === 'dark'){
+        body.classList.add('dark-mode')
+        button.textContent = 'Modo Claro'
+      }
 
-    // 1ª Digitação (Aqui)
-
-      // Se o modo escuro estiver salvo, aplica a classe 'dark-mode' e atualiza o texto do botão
-
-
-    // Adiciona um evento de clique ao botão
-    
-      // Alterna a classe 'dark-mode' no corpo da página
-      
-
-      // Verifica se o modo escuro está ativo e salva a preferência no localStorage
-
-      
+      button.addEventListener('click', () => {
+        body.classList.toggle('dark-mode')
+        
+        if(body.classList.contains('dark-mode')){
+          localStorage.setItem('mode', 'dark')
+          button.textContent = "Modo Claro"
+        }else{
+          localStorage.setItem('mode', 'light')
+          button.textContent = "Modo Escuro"
+        }
+      })
   </script>
 </body>
 </html>

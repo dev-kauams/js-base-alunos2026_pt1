@@ -9,9 +9,12 @@
     #myDiv {
       width: 100px;
       height: 100px;
+      
+      left: 0;
       background-color: lightgreen;
       position: relative; /* Permite mover a div com a propriedade 'left' */
       margin-top: 20px;
+      transition: all 0.1s ease;
     }
   </style>
 </head>
@@ -29,10 +32,20 @@
     const div = document.querySelector('#myDiv');
 
     // Variável para controlar a posição da div
-
+    let positionDiv = 0
     // 1ª Digitação (Aqui)
 
     // Adiciona um evento de clique ao botão
+    button.addEventListener('click', () => {
+      
+      if(positionDiv >= window.innerWidth - 100) {
+        positionDiv = 0;
+      } else {
+        positionDiv += 50;
+      }
+      
+      div.style.left = `${positionDiv}px`;
+    })
  
       // Aumenta a posição em 50 pixels
       
