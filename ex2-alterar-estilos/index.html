@@ -9,8 +9,10 @@
     #myDiv {
       width: 200px;
       height: 200px;
+      border-radius: 20px;
       background-color: lightblue;
       margin-top: 20px;
+      transition: all 0.1s ease;
     }
   </style>
 </head>
@@ -24,13 +26,17 @@
   <!-- Script JavaScript embutido na página -->
   <script>
     // Seleciona o botão e a div pelo ID
-
+    const myButton = document.getElementById('myButton')
+    const myDiv = document.getElementById('myDiv')
     // 1ª Digitação (Aqui)
 
     // Adiciona um evento de clique ao botão
-
+    
+    myButton.addEventListener("click", () => {
       // Verifica a cor atual da div e alterna entre lightblue e lightcoral
-
+      myDiv.style.backgroundColor = myDiv.style.backgroundColor === "lightblue" ? "lightcoral" : "lightblue"
+      
+    })
   </script>
 </body>
 </html>
