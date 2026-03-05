@@ -71,7 +71,26 @@
 
     // 1ª Digitação (Resolva aqui o exercício)
 
+    const img = document.getElementById('myImage')
+    const text = document.getElementById("myText")
+    const subText = document.getElementById('subText')
 
+    const textoOriginal = text.textContent;
+    const subTextoOriginal = subText.textContent;
+
+    img.addEventListener("mouseenter", () => {
+      img.src = "image2.png"
+      text.textContent = "Texto Alterado!"
+      subText.textContent = "Sla qm é kkk"
+
+    })
+
+    img.addEventListener("mouseleave", () => {
+      img.src = "image.png"
+      text.textContent = textoOriginal
+      subText.textContent = subTextoOriginal
+
+    })
   </script>
 </body>
 </html>
